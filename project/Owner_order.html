@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <!--This HTML page will be the home page -->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff Us </title>
+	</head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/home_owner">Home</a></li>
+	<li><a href="/add_dog" >Add Dog</a></li>
+	<li><a href="/my_orders" >My orders</a></li>
+	<li><a href="/add_order" >Add order</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	 <!--In the body of the page there will be a title, and details about the orders that the owner selected (in a table)  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class='importanth1'> My orders  </h1>
+		<div class='center1'>
+			<h2> Here you can watch your orders of walkers </h2>
+			<!--In this table the user will see all the details about the walkers he orderd  -->
+			 <table >
+				<tr> <th >Dog ID </th> <th>Dog Name</th><th>Dog's Type</th><th>Trip Day</th><th>Walker's Email</th> </tr>
+				{%for order in order%}
+				<tr>
+					
+					<td>{{order[0]}}</td>
+					<td>{{order[1]}}</td>
+					<td>{{order[2]}}</td>
+					<td>{{order[3]}}</td>
+					<td>{{order[4]}}</td>
+				  </tr>
+				  {%endfor%} 	
+			</table>
+		</div>
+	</body>
+</html>
+

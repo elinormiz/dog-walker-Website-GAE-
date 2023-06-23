@@ -1,0 +1,192 @@
+/* ----------------------------------------------------------*/
+/* dog_design.css - CSS file to be used for broswers running in a desktop    */
+/* ------------                                              */
+/* css file for handling the display of all the pages in this site     */
+/* ----------------------------------------------------------*/
+/* Authors  - Elinor Mizrahi, Tal Zohar, Matan Porcilan     */
+/* Last updated - 08.01.2019                                */
+/* ----------------------------------------------------------*/
+/* importing a font */
+@import url(https://fonts.googleapis.com/css?family=Leckerli+One);
+/* designing the main header of the page - setting it's color,font,shadow and placing it at the center of it's line */
+h1 {
+	color: black; 
+	font-family: 'Leckerli One', cursive; 
+	font-size: 80px;
+	line-height: 70px; 
+	font-weight: normal;
+	margin-bottom: 20px; 
+	margin-top: 20px; 
+	text-align: center;
+	text-shadow: 4px 4px 4px #edddcb;
+}
+/* designing another header of more pages  - setting it's color,font,shadow and the place-  at the left of it's line */
+.importanth1 {text-align: left;
+font-size: 50px;
+	line-height: 50px; 
+	color: black;
+	text-shadow: 3px 3px 3px #edddcb;
+}
+/* designing the main font of this headers */
+h2,h3,h4{
+	 font-family: "Comic Sans MS", cursive, sans-serif;
+}
+/* adding underline  */
+.uh3 {text-decoration: underline;}
+/* designing the background color of the pages - with a photo*/
+body {
+	background: url(try2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+/* here will be different design for images in the pages */
+img{  position: absolute;
+    top: 3px;
+    right: 0px;
+	width:75px
+}
+.imageim{
+    top: 22%;
+	width:70%;
+  }
+.imageim2{
+    top: 25%;
+	width:50%;
+	border-radius: 50%; 
+  }
+.imageim3{
+    top: 40%;
+	width:40%;
+	border-radius: 20%; 
+  }
+.imageim4{
+    left: 0%;
+	top: 82%;
+	border-radius: 50%; 
+  }
+.imageim5{
+    left: 45%;
+	top: 82%;
+	border-radius: 50%; 
+  }
+.imageim6{
+    top: 35%;
+	width:40%;
+	border-radius: 20%; 
+  }
+.imageim7{
+    top: 25%;
+	width:35%;
+	border-radius: 30%;
+	right: 5px;	
+	box-shadow: 3px 3px 3px #777;
+  }
+.imageim8{top: 36%;
+	width:35%;
+	border-radius: 28%; 
+	right: 5px;
+	box-shadow: 3px 3px 3px #777;}
+/* change the cursos in this site */
+*{cursor: url(bone.cur) 5 5, auto;}
+/* define a basic features to links */
+li {
+  display: inline;
+  width: 0px  
+}
+/* change the default setting of buttons-setting it's color,backgrond color, shadow and corder */
+.important_button  {cursor:pointer;
+background-color:#a8815f;
+color: white;
+box-shadow: 4px 4px 4px #492330;
+padding: 10px 24px;
+border-radius: 12px;}
+/* change the submit when the user is on this button- setting its color and background color */
+input[type=submit]:hover{background-color: #edddcb; /* Green */
+color: black;}
+/* change the cursos in this site */
+/* setting the border of this box from these type */
+input[type=text], input[type=email],input[type=number]{
+  border: 2px solid black;
+  border-radius: 4px;
+}
+/* change the select list, setting its border,colors  - that will be in the form */
+select {
+  width: 26%;
+  padding: 10px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+/* Like select but with diiferent width */
+.select1 { width: 100%;}
+/* Design the table, the font, the borders */
+
+/* design the cells in the table- adding borders*/
+table {
+border: 2px solid  Black;
+border-collapse: collapse;
+font-family: "Comic Sans MS", cursive, sans-serif;
+text-align: center;
+}
+
+table td, table th {
+    border: 1px solid black;
+}
+/* design the form- adding borders, change the font*/
+form {border: 2px solid #a8815f;
+border-collapse: collapse;
+display: inline-block;
+font-family: "Comic Sans MS", cursive, sans-serif;
+}
+/* design the pages in a div which will be with transparent white background with no borders */
+.center1 { background-color: hsla(0, 98%, 98%, 0.3);
+  filter: alpha(opacity=30);
+  display:block;
+  border: 0px solid black;}
+/* design for the links- especially for the toolbar- the color, the background-color,the size, placing  and shadows*/  
+a{
+  background-color: #a8815f;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Great Vibes", cursive;
+  cursor:pointer;
+   box-shadow: 4px 4px 4px #492330;
+   position: relative;
+  z-index: 1;
+  text-shadow: 
+        1px 1px 0px black, 
+        2px 2px 0px #999,
+        3px 3px 0px grey;
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.05) 100%);
+    background-image: -webkit-linear-gradient(left top, 
+        transparent 0%, transparent 25%, 
+        rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%, 
+        transparent 50%, transparent 75%, 
+        rgba(0,0,0,.15) 75%);
+  background-size: 4px 4px;
+  box-shadow: 
+        0 0 0 1px rgba(0,0,0,.4) inset, 
+        0 0 20px -5px rgba(0,0,0,.4),
+        0 0 0px 3px #FFF inset;
+   
+}
+/* changes for the links when the coursor is on the links- - the color and the background-color*/  
+a:hover {
+  color: black;
+   background-color: #edddcb;
+}
+/* change the design for links- the size of the font*/ 
+.differa {
+  font-size: 25px;}
+/* design for a link- placing in the page and dedsin the border*/ 
+.center {
+  border: 2px solid black;
+  text-align: center;
+  display:block;
+margin-right:75%;
+}

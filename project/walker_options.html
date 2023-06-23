@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+ <!--This HTML page will be the page where the owner will see the details about all the walker in the data base or the walkers after filtering-->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff Us </title>
+	</head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/home_owner">Home</a></li>
+	<li><a href="/add_dog" >Add Dog</a></li>
+	<li><a href="/my_orders" >My orders</a></li>
+	<li><a href="/add_order" >Add order</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	 <!--In the body of the page there will be a title, and all the option of walkers for the owner user, in a table  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class='importanth1'> Your options:  </h1>
+		<div class='center1'>
+			<h2> Here you can choose the right dog-walker for you </h2>
+			<h3>you can filter here</h3>
+			<!--The form will be in post method and after the submit button the user will send to /info_order in query string that we can take the dog id easly-->
+			 <form action="/info_order?dog_id={{dog_id}}" method="post" >
+				<table>
+					<!--This is the potion to filter with specific city  -->
+					 <tr>
+						<th class="label" > City</th>
+						<td >
+							<select name="City"  class='select1' >
+								<option></option>
+								<option value="tel_aviv"  > Tel-Aviv</option>
+								<option value="jerusalem"  > Jerusalem</option>
+								<option value="haifa" > Haifa</option>
+								<option value="raanana"  > Raanana</option>
+								<option value="beer_yaacov" >Beer-Yaacov</option>
+								<option value="herzeliya"> Herzeliya</option>
+								<option value="netanya" > Netanya</option>
+								<option value="rishon_lezion" > Rishon-Lezion</option>
+								<option value="ramat_gan"  > Ramat-Gan</option>
+								<option value="ashdod" > Ashdod</option>
+								<option value="holon"  > Holon</option>
+								<option value="bat_yam"  > Bat-Yam</option>
+								<option value="eilat"  > Eilat</option>
+								<option value="petah_tikva"  > Petah-Tikva</option>
+								<option value="rehovot"  > Rehovot</option>
+						</td>
+						<td colspan=2></td>
+						<!--This is the potion to filter with specific day  -->
+						<th class="label" > day</th>
+						<td >
+							<select name="day" class='select1'>
+								<option></option>
+								<option value="sunday"  > sunday</option>
+								<option value="monday"  > monday</option>
+								<option value="tuesday" > tuesday</option>
+								<option value="wednesday"  > wednesday</option>
+								<option value="thursday" >thursday</option>
+								<option value="friday"> friday</option>
+								<option value="saturday" > saturday</option>
+						</td>
+						<td colspan=2></td>
+						<!--This is the potion to filter with maximun price  -->
+						<th class="label"> Price per Day </th>
+						<td >
+							<input type="number" name="price">
+						</td>
+						<td colspan=2></td>
+						<!--This is the submit button for the filtering, and after that the owner will see the details of the selected walker after he filters -->
+						<td><button type="submit" formaction="/add_order2?Mydog={{dog_name}}" class='important_button'>Filter</button></td>
+					 </tr>
+					 </table>
+					 </form >
+					 </br></br>
+					 <hr/>
+					 <form action="/info_order?dog_id={{dog_id}}" method="post" >
+					 <table  >
+					 <!--Here all the matched walkers will shown, and the owner could select one of them -->
+					 <tr>
+						<th class='th1'>Select</th>
+						<th class='th1'>First Name</th>
+						<th class='th1'>Last Name</th>
+						<th class='th1'>E-mail</th>
+						<th class='th1'>Price</th>
+						<th class='th1'>Max Number of dogs</th>
+						<th class='th1'>City</th>
+						<th class='th1'>Phone</th>
+						<th class='th1'>Day</th>
+					</tr>
+					{%for walker in info%}
+					<tr>
+						<td><input type="radio" name='walker_details' value="{{walker.W_Email}},{{walker.work_days}}" required></td>
+						<td>{{walker.W_First_name}}</td>
+						<td>{{walker.W_Last_name}}</td>
+						<td>{{walker.W_Email}}</td>
+						<td>{{walker.Price_per_day}}</td>
+						<td>{{walker.Max_dog_number_per_day}}</td>
+						<td>{{walker.W_City}}</td>
+						<td>{{walker.W_Phone_Number}}</td>
+						<td>{{walker.work_days}}</td>
+				   </tr>
+				   {%endfor%} 
+						</tr> 
+						<!--This is the submit button for this form, and after that the owner will see a page with the details of the selected walker -->
+						<td colspan=9 class='imtable'><input type="submit" value="choose" class="important_button"></td>
+						
+					</tr>
+			
+			</table>
+			</form>
+		</div>
+	</body>
+</html>

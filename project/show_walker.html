@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ <!--This HTML page will show the selectes walker for the owner user -->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff Us </title>
+	</head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/home_owner">Home</a></li>
+	<li><a href="/add_dog" >Add Dog</a></li>
+	<li><a href="/my_orders" >My orders</a></li>
+	<li><a href="/add_order" >Add order</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	 <!--In the body of the page there will be a title, and details about the selected walker in a table  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class='importanth1'> My choice   </h1>
+			<div class='center1'>
+				<h2> This is the walker you chose: </h2>
+				 <!--In this table there will be the details about the selected walker  -->
+				<table >
+					 <tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>E-mail</th>
+						<th>Price</th>
+						<th>Max Number of dogs</th>
+						<th>City</th>
+						<th>Phone</th>
+						<th>Day</th>
+					</tr>
+					<tr>
+						<td>{{walker.W_First_name}}</td>
+						<td>{{walker.W_Last_name}}</td>
+						<td>{{walker.W_Email}}</td>
+						<td>{{walker.Price_per_day}}</td>
+						<td>{{walker.Max_dog_number_per_day}}</td>
+						<td>{{walker.W_City}}</td>
+						<td>{{walker.W_Phone_Number}}</td>
+						<td>{{walker.choose_day}}</td>
+					</tr>
+			</table>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> 
+		</div>
+	</body>
+</html>

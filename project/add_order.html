@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ <!--This HTML page will be the page where the user can add an order from the walkers in the data base -->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff us </title>
+	</head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/home_owner" >Home</a></li>
+	<li><a href="/add_dog" >Add Dog</a></li>
+	<li><a href="/my_orders" >My orders</a></li>
+	<li><a href="/add_order" >Add order</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	<!--In the body of the page there will be a title, tand there will be a form where the user will choose one of his dogs  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class='importanth1'> Add an order  </h1>
+		<div class='center1'>
+			<h2> Here you will choose a walker for your selected dog  </h2>
+			<h2> Please choose a dog:</h2>
+			<!--The form will be in post method and after the submit button the user will send to /add_order2 -->
+			<form action="/add_order2" method="post" >
+				<table>
+					<tr><td colspan=2></td></tr>
+					<!--Here we insert all the dogs of the current user -->
+					<tr>
+						<th class="label"> My Dog</th>
+						<td>
+							<select name="Mydog" class='select1'>
+								{%for dog in dogs%}
+									<option value={{dog}}> {{dog}}</option>
+								{%endfor%}
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the submit button for this form, and after that the owner will continue in this progress and choose the walker -->
+					<tr>
+						<td colspan=2><input type="submit" value="send" class="important_button"></td></tr>
+					<tr><td colspan=2></td></tr>
+				</table>
+			</form>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</div>
+	</body>
+</html>
+

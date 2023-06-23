@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+ <!--This HTML page will be the page where the owner will see the details about all the walker in the data base or the walkers after filtering-->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff Us </title>
+	</head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/mainlogin">Home</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	 <!--In the body of the page there will be a title, and all the walkers, in a table  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class='importanth1'> Our Walkers:  </h1>
+		<div class='center1'>
+			<h2> Here you can see all the walkers in our site </h2>
+			<table>
+					 <!--Here all  walkers will shown for the user -->
+					 <tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>E-mail</th>
+						<th>Price</th>
+						<th>Max Number of dogs</th>
+						<th>City</th>
+						<th>Phone</th>
+						<th>Work Days</th>
+					</tr>
+					{%for walker in info%}
+					<tr>
+						<td>{{walker.W_First_name}}</td>
+						<td>{{walker.W_Last_name}}</td>
+						<td>{{walker.W_Email}}</td>
+						<td>{{walker.Price_per_day}}</td>
+						<td>{{walker.Max_dog_number_per_day}}</td>
+						<td>{{walker.W_City}}</td>
+						<td>{{walker.W_Phone_Number}}</td>
+						<td>
+						{%for day in walker.work_days%}
+							{%if day==walker.work_days[-1]%}
+								{{day}}
+							
+							{%else%}
+								{{day}},
+							{%endif%}
+						{%endfor%}
+						</td>
+				   </tr>
+				   {%endfor%} 
+
+			</table>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--This HTML page will be the page where the walker fill his details (in a form) -->
+<html>
+	<head>
+		<!--The style is defined in a CSS file -->
+    	<link rel="stylesheet" type="text/css" href="stylesheets/dog_design.css">
+		<!--This is the icon and the title for this site -->
+		<link rel="icon" href="stylesheets/good_logo.png" type="image/gif">
+		<title> Dog Wuff Us </title>
+    </head>
+	<!--The following links are links to in-site navigation -->
+	<li><a href="/mainpage">Home</a></li>
+	<li><a href="/contact">Contact </a></li>
+	<li><a href="/aboutus">About us</a></li> 
+	<li><a href="/all_walkers">Our Walkers</a></li>
+	<li><a href="/logout">Logout</a></li>
+	 <!--In the body of the page there will be a title, and a form that the walker will fill  -->
+	<body>
+		<img src="stylesheets/good_logo.png" >
+		<h1 class="importanth1"> Walker's Details: </h1>
+		<h2> Please enter your details:</h2>
+		<div class='center1'>
+		<!--The form will be in post method and after the submit button the user will send to /info_walker -->
+			<form action="/info_walker" method="post" >
+				<table >
+					<!--This is the first name of the walker -->
+					<tr>
+						<th > First Name</th>
+						<td >
+							<input type="text" name="fname" pattern="[a-zA-Z]{0,20}" title='Just letters' required>
+						</td>
+					</tr>
+					<td colspan=2>
+					<!--This is the last name of the walker -->
+					  <tr>
+						<th> Last Name</th>
+						<td >
+							<input type="text" name="lname" pattern="[a-zA-Z]{0,20}" title='Just letters' required>
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the city of the walker(from a list) -->
+					<tr>
+						<th> City</th>
+						<td >
+							<select name="city" required>
+								<option value="tel_aviv"  > Tel-Aviv</option>
+								<option value="jerusalem"  > Jerusalem</option>
+								<option value="haifa" > Haifa</option>
+								<option value="raanana"  > Raanana</option>
+								<option value="beer_yaacov" >Beer-Yaacov</option>
+								<option value="herzeliya"> Herzeliya</option>
+								<option value="netanya" > Netanya</option>
+								<option value="rishon_lezion" > Rishon-Lezion</option>
+								<option value="ramat_gan"  > Ramat-Gan</option>
+								<option value="ashdod" > Ashdod</option>
+								<option value="holon"  > Holon</option>
+								<option value="bat_yam"  > Bat-Yam</option>
+								<option value="eilat"  > Eilat</option>
+								<option value="petah_tikva"  > Petah-Tikva</option>
+								<option value="rehovot"  > Rehovot</option>
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the phone of the walker -->
+					<tr>
+						<th> Phone Number</th>
+						<td >
+							<input type="text" name="phonenumber" pattern='[0-9]{10}' title='Ten numbers'required >
+						</td>
+					</tr>
+					<td colspan=2>
+					<!--This is the email of the walker -->
+					<tr>
+						<th>E-mail</th>
+						<td>
+							<input  type="email" name="email" placeholder=" Your Google Email" required>
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the work's days of the walker -->
+					<tr>
+						<th>Activity Days</th>
+						<td>
+							<input type="checkbox" name="day1" value="sunday"> Sunday
+							<input type="checkbox" name="day2" value="monday"> Monday 
+							<input type="checkbox" name="day3" value="tuesday"> Tuesday 
+							<input type="checkbox" name="day4" value="wednesday"> Wednesday 
+							<input type="checkbox" name="day5" value="thursday"> Thursday
+							<input type="checkbox" name="day6" value="friday"> Friday 
+							<input type="checkbox" name="day7" value="saturday"> Saturday 
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the price of the owner -->
+					<tr>
+						<th> Price per Day </th>
+						<td >
+							<input type="number" name="price" min="1" required>
+						</td>
+					</tr>
+					<td colspan=2>
+					<!--This is the max number of dog that the owner can take  -->
+					 <tr>
+						<th> Dog's max number</th>
+						<td >
+							<input type="number" name="maxdogs" min="1" required>
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the dog's type that the owner can take -->
+					<tr>
+						<th>Dog's Type</th>
+						<td>
+							 &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp
+							<input type="checkbox" name="type1" value="labrador" > Labrador  &nbsp &nbsp &nbsp &nbsp  &nbsp
+							<input type="checkbox" name="type2" value="french_Bulldog"> French Bulldog &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp
+							<input type="checkbox" name="type3" value="pug"> Pug </br> &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+							<input type="checkbox" name="type4" value="poodle">  Poodle  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp 
+							<input type="checkbox" name="type5" value="shih_tzu"> Shih Tzu    &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+							<input type="checkbox" name="type6" value="golden_retriever"> Golden Retriever</br>  &nbsp &nbsp &nbsp  &nbsp  
+							<input type="checkbox" name="type7" value="pomeranian"> Pomeranian  &nbsp &nbsp  &nbsp  
+							<input type="checkbox" name="type8" value="chihuahua"> Chihuahua &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp   &nbsp
+						</td>
+					</tr>
+					<tr><td colspan=2></td></tr>
+					<!--This is the submit button for this form, and after that the walker will be in the data base -->
+					<tr>
+						<td colspan=2>
+						<input type="submit" value="send" class="important_button"></td>
+					</tr>
+				</table>
+			</form>
+		</div >
+	</body>
+</html>
+
